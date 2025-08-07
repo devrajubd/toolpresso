@@ -12,4 +12,4 @@ router.post("/text-summarizer", Summnerize);
 router.post("/youtube-tags-extractor", youtubeTagExtractor);
 router.post("/shorten", url_shortener);
 
-export default router;
+export default router; 
