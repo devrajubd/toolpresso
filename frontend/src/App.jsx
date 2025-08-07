@@ -16,7 +16,7 @@ import ColorPicker from "./tools/ColorPicker";
 import CaseConverter from "./tools/CaseConverter";
 import EmojiPicker from "./tools/emojiPIcker";
 import About from "./pages/about";
-import Contact from "./pages/contact";
+import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/Conditions";
 import ImageResizer from "./tools/ImageResizer";
 import ImageCompressor from "./tools/ImageCompressor";

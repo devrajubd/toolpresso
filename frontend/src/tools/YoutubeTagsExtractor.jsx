@@ -9,7 +9,7 @@ function YoutubeTagsExtractor() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
-
+  const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:8000";
   const extractTags = async () => {
     const youtubeRegex =
       /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})$/;
@@ -24,7 +24,7 @@ function YoutubeTagsExtractor() {
 
     try {
       const res = await fetch(
-        "http://localhost:5000/api/youtube-tags-extractor",
+        apiUrl + "/api/youtube-tags-extractor",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -46,7 +46,7 @@ function YoutubeTagsExtractor() {
   };
 
   const handleCopy = () => {
-    const tagString = tags.map((t) => `${t}`).join(" ");
+    const tagString = tags.map((t) => `${t}`).join(",");
     navigator.clipboard.writeText(tagString).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);

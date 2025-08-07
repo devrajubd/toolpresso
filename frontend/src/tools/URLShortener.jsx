@@ -9,7 +9,7 @@ function URLShortener() {
   const [error, setError] = useState("");
   const [copy, setcopy] = useState("copy");
   const [loading, setLoading] = useState(false);
-
+  const apiUrl = import.meta.env.VITE_API_URL || "https://localhost:8000";
   const handleShorten = async () => {
     if (!url) {
       setError("Please enter a valid URL.");
@@ -17,7 +17,7 @@ function URLShortener() {
     }
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/shorten", {
+      const res = await fetch(apiUrl + "/api/shorten", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url }),
@@ -132,9 +132,8 @@ function URLShortener() {
         {error && <p className="text-red-500 text-start">{error}</p>}
         <button
           onClick={handleShorten}
-          className={`bg-blue-600 text-white px-6 py-2 mt-5 rounded hover:bg-blue-700 cursor-pointer ${
-            loading ? "opacity-50 cursor-not-allowed" : ""
-          }`}
+          className={`bg-blue-600 text-white px-6 py-2 mt-5 rounded hover:bg-blue-700 cursor-pointer ${loading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
         >
           {loading ? "Shortening..." : "Shorten"}
         </button>

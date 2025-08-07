@@ -11,7 +11,7 @@ function TextSummarizer() {
   const [ratio, setRatio] = useState(30);
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState(false);
-
+  const apiUrl = import.meta.env.VITE_API_URL || "https://localhost:8000";
   const handleSummarize = async () => {
     if (!text.trim()) return;
 
@@ -24,7 +24,7 @@ function TextSummarizer() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/text-summarizer",
+        apiUrl + "/api/text-summarizer",
         {
           text,
           ratio,
@@ -146,9 +146,8 @@ function TextSummarizer() {
           <button
             onClick={handleSummarize}
             disabled={loading || !text.trim()}
-            className={`bg-blue-600 text-white font-medium px-6 py-2 rounded hover:bg-blue-700 transition ${
-              loading ? "opacity-50 cursor-not-allowed" : ""
-            }`}
+            className={`bg-blue-600 text-white font-medium px-6 py-2 rounded hover:bg-blue-700 transition ${loading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
           >
             {loading ? "Summarizing..." : "Summarize"}
           </button>

@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "start": "vite start"
+    "start": "vite preview"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
