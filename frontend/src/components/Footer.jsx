@@ -2,11 +2,9 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="bg-white border-t mt-10">
-      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-sm text-gray-700">
+      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center text-sm text-gray-700">
         <div>
-          <h2 className="font-semibold text-lg mb-3 text-gray-900">
-            Toolpresso
-          </h2>
+          <h2 className="font-bold text-lg mb-3 text-blue-600">Toolpresso</h2>
           <p>Your daily toolbox for smarter digital tasks.</p>
         </div>
 
@@ -51,7 +49,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-
+        {/* 
         <div>
           <h2 className="font-semibold mb-3 text-gray-900">Stay Connected</h2>
           <form className="space-y-2">
@@ -67,7 +65,7 @@ function Footer() {
               Subscribe
             </button>
           </form>
-        </div>
+        </div> */}
       </div>
 
       <div className="border-t text-center py-4 text-gray-500 text-xs">

@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 function PrivacyPolicy() {
   return (
@@ -22,7 +23,7 @@ function PrivacyPolicy() {
       <div className="max-w-4xl mx-auto px-6 py-12 text-gray-800">
         <h1 className="text-4xl font-bold mb-6 text-center">Privacy Policy</h1>
         <p className="mb-4">
-          At <strong>Toolpresso.tools</strong>, your privacy is extremely
+          At <strong>Toolpresso.com</strong>, your privacy is extremely
           important to us. This Privacy Policy outlines what information we
           collect and how we use, store, and protect it.
         </p>
@@ -86,7 +87,11 @@ function PrivacyPolicy() {
         <h2 className="text-2xl font-semibold mt-8 mb-2">8. Contact Us</h2>
         <p>
           If you have any questions about this Privacy Policy, feel free to
-          contact us at <strong>support@toolpresso.tools</strong>.
+          contact us at{" "}
+          <strong>
+            <Link to="/contact">Contact</Link>
+          </strong>
+          .
         </p>
 
         <p className="mt-10 text-center text-sm text-gray-500">

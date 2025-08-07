@@ -283,7 +283,7 @@ function CaseConverter() {
           <div className="flex justify-end mt-4">
             <button
               onClick={handleClear}
-              className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition duration-200 ease-in-out flex items-center gap-2"
+              className="bg-red-500 text-white cursor-pointer py-2 px-4 rounded-lg hover:bg-red-600 transition duration-200 ease-in-out flex items-center gap-2"
               aria-label="Clear all text"
             >
               <svg
@@ -324,7 +324,7 @@ function CaseConverter() {
               <button
                 key={type}
                 onClick={() => convertText(type)}
-                className="bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition duration-200 ease-in-out text-base font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="bg-blue-600 text-white cursor-pointer py-3 px-4 rounded-lg hover:bg-blue-700 transition duration-200 ease-in-out text-base font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 aria-label={`Convert to ${label}`}
               >
                 {label}
@@ -339,7 +339,7 @@ function CaseConverter() {
             {convertedText && (
               <button
                 onClick={handleCopy}
-                className={`absolute top-2 right-2 p-2 rounded-full ${
+                className={`absolute top-2 right-2 p-2 rounded-full cursor-pointer ${
                   copied ? "bg-green-500" : "bg-gray-300 hover:bg-gray-400"
                 } text-white transition duration-200 ease-in-out flex items-center justify-center`}
                 aria-label={copied ? "Copied!" : "Copy converted text"}
@@ -376,7 +376,7 @@ function CaseConverter() {
             <button
               onClick={handleCopy}
               disabled={!convertedText}
-              className={`flex-1 px-6 py-3 text-white rounded-lg transition duration-200 ease-in-out font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+              className={`flex-1 px-6 py-3 text-white rounded-lg cursor-pointer transition duration-200 ease-in-out font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                 copied
                   ? "bg-green-600 cursor-default focus:ring-green-500"
                   : "bg-gray-800 hover:bg-gray-900 focus:ring-gray-700"
@@ -397,7 +397,7 @@ function CaseConverter() {
             <button
               onClick={handleDownload}
               disabled={!convertedText}
-              className="flex-1 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition duration-200 ease-in-out font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 flex items-center justify-center gap-2"
+              className="flex-1 bg-purple-600 cursor-pointer hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition duration-200 ease-in-out font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 flex items-center justify-center gap-2"
               aria-label="Download converted text as .txt file"
             >
               <svg
@@ -460,6 +460,36 @@ function CaseConverter() {
           <li>
             <strong>Capitalize Each Word</strong> – Similar to title case but
             more general.
+          </li>
+          <li>
+            <strong>camelCase</strong> – First word is lowercase, subsequent
+            words are capitalized with no spaces.
+          </li>
+          <li>
+            <strong>PascalCase</strong> – Each word is capitalized, including
+            the first, with no spaces.
+          </li>
+          <li>
+            <strong>snake_case</strong> – Words are lowercase and separated by
+            underscores.
+          </li>
+          <li>
+            <strong>kebab-case</strong> – Words are lowercase and separated by
+            hyphens.
+          </li>
+          <li>
+            <strong>commaCase</strong> – Words are separated by commas.
+          </li>
+          <li>
+            <strong>dot.case</strong> – Words are separated by dots.
+          </li>
+          <li>
+            <strong>aLtErNaTiNg cAsE</strong> – Alternates uppercase and
+            lowercase letters.
+          </li>
+          <li>
+            <strong>InVeRsE cAsE</strong> – Inverts the case of each character
+            (uppercase becomes lowercase and vice versa).
           </li>
         </ul>
 
@@ -531,7 +561,7 @@ function CaseConverter() {
         <h2 className="text-2xl font-semibold mt-8 mb-4">
           Examples of Case Formats
         </h2>
-        <div className="bg-gray-100 p-4 rounded mb-6">
+        <div class="bg-gray-100 p-4 rounded mb-6">
           <p>
             <strong>Original:</strong> "this is a case converter tool"
           </p>
@@ -546,6 +576,34 @@ function CaseConverter() {
           </p>
           <p>
             <strong>Sentence case:</strong> This is a case converter tool.
+          </p>
+          <p>
+            <strong>Capitalize Each Word:</strong> This Is A Case Converter Tool
+          </p>
+          <p>
+            <strong>camelCase:</strong> thisIsACaseConverterTool
+          </p>
+          <p>
+            <strong>PascalCase:</strong> ThisIsACaseConverterTool
+          </p>
+          <p>
+            <strong>snake_case:</strong> this_is_a_case_converter_tool
+          </p>
+          <p>
+            <strong>kebab-case:</strong> this-is-a-case-converter-tool
+          </p>
+          <p>
+            <strong>commaCase:</strong> this,is,a,case,converter,tool
+          </p>
+          <p>
+            <strong>dot.case:</strong> this.is.a.case.converter.tool
+          </p>
+          <p>
+            <strong>aLtErNaTiNg cAsE:</strong> ThIs Is A CaSe CoNvErTeR ToOl
+          </p>
+          <p>
+            <strong>InVeRsE cAsE:</strong> THIS IS A CASE CONVERTER TOOL → this
+            is a case converter tool
           </p>
         </div>
 

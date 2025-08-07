@@ -1,5 +1,5 @@
 // const cheerio = require("cheerio");
-// const axios = require("axios");
+import axios from "axios";
 import * as cheerio from "cheerio";
 
 const youtubeTagExtractor = async (req, res) => {

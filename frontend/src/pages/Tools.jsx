@@ -5,11 +5,6 @@ import { Helmet } from "react-helmet-async";
 
 const tools = [
   {
-    name: "Text Summarizer",
-    path: "/text-summarizer",
-    description: "Summarize long text with AI-like intelligence.",
-  },
-  {
     name: "QR Code Generator",
     path: "/qr-code-generator",
     description: "Create scannable QR codes instantly.",
@@ -33,6 +28,11 @@ const tools = [
     name: "Color Picker",
     path: "/color-picker",
     description: "Pick and copy any color easily.",
+  },
+  {
+    name: "Text Summarizer",
+    path: "/text-summarizer",
+    description: "Summarize long text with AI-like intelligence.",
   },
   {
     name: "YouTube Thumbnail Downloader",
