@@ -13,7 +13,7 @@ function YouTubeThumbnailDownloader() {
   const extractVideoId = (url) => {
     const match = url.match(/(?:v=|\/)([\w-]{11})/);
     if (!match) return null;
-    return videoId = match[1];
+    return match[1];
   };
 
   const handleGenerate = () => {
