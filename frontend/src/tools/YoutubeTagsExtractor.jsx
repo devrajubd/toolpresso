@@ -11,8 +11,7 @@ function YoutubeTagsExtractor() {
   const [copied, setCopied] = useState(false);
   const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:8000";
   const extractTags = async () => {
-    const youtubeRegex =
-      /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})$/;
+    const youtubeRegex = /^(https?:\/\/)?(www\.|m\.)?(youtube\.com\/(watch\?v=|embed\/|v\/)|youtu\.be\/)[\w-]{11}([?&=.\w-]*)?$/;
 
     if (!url || !youtubeRegex.test(url.trim())) {
       return setError("Please enter a valid YouTube video URL.");

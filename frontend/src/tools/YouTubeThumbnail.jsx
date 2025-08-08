@@ -11,8 +11,7 @@ function YouTubeThumbnailDownloader() {
   const [message, setMessage] = useState("");
 
   const extractVideoId = (url) => {
-    const regex =
-      /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([^\s&]+)/;
+    const regex = /^(https?:\/\/)?(www\.|m\.)?(youtube\.com\/(watch\?v=|embed\/|v\/)|youtu\.be\/)[\w-]{11}([?&=.\w-]*)?$/;
     const match = url.match(regex);
     return match ? match[1] : url;
   };
