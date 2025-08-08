@@ -11,13 +11,13 @@ function YouTubeThumbnailDownloader() {
   const [message, setMessage] = useState("");
 
   const extractVideoId = (url) => {
-    const regex = /^(https?:\/\/)?(www\.|m\.)?(youtube\.com\/(watch\?v=|embed\/|v\/)|youtu\.be\/)[\w-]{11}([?&=.\w-]*)?$/;
-    const match = url.match(regex);
-    return match ? match[1] : url;
+    const match = url.match(/(?:v=|\/)([\w-]{11})/);
+    if (!match) return null;
+    return videoId = match[1];
   };
 
   const handleGenerate = () => {
-    const id = extractVideoId(videoId.trim());
+    const id = extractVideoId(videoId);
     const isValid = /^[a-zA-Z0-9_-]{11}$/.test(id);
 
     if (!videoId || !isValid) {
