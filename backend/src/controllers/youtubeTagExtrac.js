@@ -18,7 +18,7 @@ const youtubeTagExtractor = async (req, res) => {
       timeout: 10000,
     });
     const $ = cheerio.load(response.data);
-    console.log($);
+    console.log($("meta"));
     const tagsMeta = $('meta[name="keywords"]').attr("content");
     const tags = tagsMeta ? tagsMeta.split(",").map((t) => t.trim()) : [];
     console.log(tags);
